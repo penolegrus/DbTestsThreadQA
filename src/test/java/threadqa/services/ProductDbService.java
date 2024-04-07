@@ -14,7 +14,7 @@ public class ProductDbService extends JpaService {
                 .mySql() //выбираем тип бд
                 .jdbcUrl("jdbc:mysql://localhost:3306/springbootdb") //ссылка на бд
                 .username("root") //логин бд
-                .password("ajuqy78iuhhjkkaj") //пароль бд
+                .password("") //пароль бд
                 .persistenceUnitName("test") //название persistence-unit из xml файла
                 .build() // билдим конфиг
                 .createEntityManager()); //создаем менеджер
