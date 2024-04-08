@@ -25,6 +25,15 @@ public class DbTests {
     }
 
     @Test
+    public void nativeQueryTest(){
+        Product product = createRandomProduct();
+        productDbService.save(product);
+
+        String result = productDbService.getNameByProductId(product.getId());
+        Assertions.assertEquals(product.getName(), result);
+    }
+
+    @Test
     public void addProductTest() {
         Product product = createRandomProduct();
         productDbService.save(product);

@@ -50,6 +50,17 @@ public class ProductDbService extends JpaService {
     }
 
     /**
+     * Нативный SQL запрос без привязки к Entity класса, получает название продукта по айди
+     * @param id айди продукта
+     * @return
+     */
+    public String getNameByProductId(int id){
+        return em.createNativeQuery("select name from springbootdb.product where id =:idProduct")
+                .setParameter("idProduct", id)
+                .getSingleResult().toString();
+    }
+
+    /**
      * Обновляет имя у продукта
      * @param id айди продукта, у которого надо обновить
      * @param newName новое имя
