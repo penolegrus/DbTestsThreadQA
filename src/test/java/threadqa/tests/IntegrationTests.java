@@ -1,10 +1,10 @@
 package threadqa.tests;
 
 import com.codeborne.selenide.Selenide;
-import entities.Product;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
 import threadqa.db.JpaExtension;
+import threadqa.db.entities.Product;
 import threadqa.pages.MainPage;
 import threadqa.pages.ProductPage;
 import threadqa.pages.ProductsPage;

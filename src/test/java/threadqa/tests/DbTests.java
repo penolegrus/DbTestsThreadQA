@@ -1,10 +1,10 @@
 package threadqa.tests;
 
-import entities.Product;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import threadqa.db.JpaExtension;
+import threadqa.db.entities.Product;
 import threadqa.services.ProductDbService;
 
 import javax.persistence.EntityNotFoundException;

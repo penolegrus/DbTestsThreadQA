@@ -5,8 +5,8 @@
 <persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence"
              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
-<!--Название юнита, в котором должны быть указаны классы, которые можно связанть с БД-->
+    <!--Название юнита, в котором должны быть указаны классы, которые можно связанть с БД-->
     <persistence-unit name="test" transaction-type="RESOURCE_LOCAL">
-        <class>entities.Product</class>
+        <class>threadqa.db.entities.Product</class>
     </persistence-unit>
 </persistence>

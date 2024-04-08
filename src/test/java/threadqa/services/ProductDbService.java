@@ -1,9 +1,9 @@
 package threadqa.services;
 
 
-import entities.Product;
 import threadqa.db.EmfBuilder;
 import threadqa.db.JpaService;
+import threadqa.db.entities.Product;
 
 /**
  * Сервис для взаимодействя с БД только для сущностей, связанных с Продуктом на основе файла persistence
@@ -14,7 +14,7 @@ public class ProductDbService extends JpaService {
                 .mySql() //выбираем тип бд
                 .jdbcUrl("jdbc:mysql://localhost:3306/springbootdb") //ссылка на бд
                 .username("root") //логин бд
-                .password("") //пароль бд
+                .password("ajuqy78iuhhjkkaj") //пароль бд
                 .persistenceUnitName("test") //название persistence-unit из xml файла
                 .build() // билдим конфиг
                 .createEntityManager()); //создаем менеджер
