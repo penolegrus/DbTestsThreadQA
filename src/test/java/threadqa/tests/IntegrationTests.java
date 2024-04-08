@@ -47,6 +47,7 @@ public class IntegrationTests {
     @Test
     public void integrationAddProductTest() {
         Product product = createRandomProduct();
+
         mainPage.openCreateNewProduct()
                 .setProductId(product.getProductId())
                 .setName(product.getName())

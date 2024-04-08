@@ -49,7 +49,8 @@ public enum EmfContext {
             settings.put("hibernate.hikari.idleTimeout", "240000");
             settings.put("hibernate.hikari.maxLifetime", "270000");
             settings.put("hibernate.temp.use_jdbc_metadata_defaults", "false");
-            settings.put("hibernate.hikari.dataSource.url", Objects.requireNonNullElseGet(connConfig.jdbcUrl, () -> connConfig.jdbcPrefix + "://" + connConfig.dbHost + ":" + connConfig.dbPort + "/" + connConfig.dbName));
+            settings.put("hibernate.hikari.dataSource.url", Objects.requireNonNullElseGet(connConfig.jdbcUrl,
+                    () -> connConfig.jdbcPrefix + "://" + connConfig.dbHost + ":" + connConfig.dbPort + "/" + connConfig.dbName));
             settings.put("hibernate.hikari.dataSource.user", connConfig.username);
             settings.put("hibernate.hikari.dataSource.password", connConfig.password);
             settings.put("hibernate.dialect", connConfig.dialect);

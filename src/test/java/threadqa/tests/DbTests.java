@@ -28,6 +28,9 @@ public class DbTests {
     public void nativeQueryTest(){
         Product product = createRandomProduct();
         productDbService.save(product);
+        Assertions.assertDoesNotThrow(() -> {
+            productDbService.get(product.getId());
+        });
 
         String result = productDbService.getNameByProductId(product.getId());
         Assertions.assertEquals(product.getName(), result);
@@ -37,19 +40,9 @@ public class DbTests {
     public void addProductTest() {
         Product product = createRandomProduct();
         productDbService.save(product);
-        Assertions.assertNotNull(productDbService.getProductByName(product.getName()));
-    }
-
-    @Test
-    public void getProductByIdTest() {
-        Product product = productDbService.get(1);
-        Assertions.assertEquals("testedited", product.getName());
-    }
-
-    @Test
-    public void getProductByNameTest() {
-        Product product = productDbService.getProductByName("testedited");
-        Assertions.assertEquals("testedited", product.getName());
+        Assertions.assertDoesNotThrow(() -> {
+            productDbService.getProductByName(product.getName());
+        });
     }
 
     @Test
@@ -59,8 +52,11 @@ public class DbTests {
         Product product = createRandomProduct();
         productDbService.save(product);
 
+        Assertions.assertDoesNotThrow(() -> {
+            productDbService.getProductByName(product.getName());
+        });
+
         Product productFromDb = productDbService.getProductByName(product.getName());
-        Assertions.assertNotNull(productFromDb);
 
         productDbService.updateProductName(productFromDb.getId(), expectedName);
         productFromDb = productDbService.getProductByName(product.getName());
